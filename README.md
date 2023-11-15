@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+dayify
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This app is an E-commerce to buy essentials products for families in Latin America.
 
-### `npm start`
+### Problem
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My brother-in-law runs a business that exports products from the USA to various countries in Latin America. The purpose of this endeavor is to assist families in the USA by enabling them to send gifts, food, and essential products to their relatives in times of need or simply to express love through thoughtful gifts on their birthdays. This initiative not only fosters cross-border connections but also contributes to the well-being and joy of families on both ends of the exchange.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Profile
 
-### `npm test`
+The app will be designed for individuals in the USA who wish to send gifts, food, and essential products to their families in Latin America through the export business that my brother in law runs. Users should be able to browse through a catalog of available products, select items they want to send, and add them to their virtual cart.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features
 
-### `npm run build`
+Product Catalog in the Home-Page / Search Functionality: A robust search feature to help users find products quickly. / Shopping Cart: To Add and remove items. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REACT, HTML, CSS, SASS, NODE, EXPRESS
 
-### `npm run eject`
+### APIs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I will use my own api.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sitemap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Product Catalog-Page: Display of products with images, descriptions, and prices. Categorization and filtering options for easy navigation.
+Shopping Cart-Page: Add and remove items from the cart. View and modify the contents of the shopping cart. Calculate and display the total order amount.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Roadmap
 
-## Learn More
+The project development process will be divided into three sprints, each lasting four days.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sprint #1: Product Catalog-Page Development
+- Design the Product Catalog-Page.
+- Implement a custom API to display products with images, descriptions, and prices.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sprint #2: Search Functionality Development
+- Develop a robust search feature to facilitate quick product discovery.
+- Enhance and improve the work done in Sprint #1.
 
-### Code Splitting
+Sprint #3: Shopping Cart-Page Development and General Project Improvement
+- Create and develop the Shopping Cart-Page.
+- Implement improvements across the entire project to enhance its visual appeal and user experience.
+- This organized roadmap outlines the specific tasks and goals for each sprint, ensuring a systematic and focused approach to building the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Nice-to-haves
 
-### Analyzing the Bundle Size
+My future plan includes building additional features and continuing to learn after graduation day developing the following features:
+- User Registration and Profiles: User account creation and authentication.Profile management to store shipping addresses, payment information, and order history.
+- Wishlist: Save favorite products for future reference or purchase.
+- Reviews and Ratings: Allow users to leave reviews and ratings for products.
+- Product Details: Detailed product pages with specifications, reviews, and related items.
+- Social Media Integration: Allow users to share products on social media platforms.
+- Accessibility: Ensure the app is accessible to users with disabilities.
+- Order Placement: Secure checkout process with multiple payment options. Order summary and confirmation.
+- Payment Gateway Integration: Integration with payment gateways to process transactions securely.
+- User Notifications: Alerts for order confirmations, shipping updates, and promotions.
+- Customer Support: Integration of chat support or a helpdesk for customer inquiries.
+- Returns and Refunds: Clear policies and processes for handling returns and refunds.
+- Security Features: SSL encryption to secure transactions and protect user data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Mockups
 
-### Making a Progressive Web App
+Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches: I will be providing this asap I have it ready.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Data
 
-### Advanced Configuration
+Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Endpoints
 
-### Deployment
+List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Auth
 
-### `npm run build` fails to minify
+Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
