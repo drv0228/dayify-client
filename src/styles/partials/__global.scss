@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Dayify";
+  src: url("../../assets/fonts/GloriaHallelujah-Regular.ttf") format("truetype"),
+    url("../../assets/fonts/alternativesFiles/GiveYouGlory-Regular.ttf")
+      format("truetype");
+  // font-weight: 700;
+}
+
+@font-face {
+  font-family: "Dayana";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+    url("../../assets/fonts/alternativesFiles/AvenirNextLTPro.ttf")
+      format("truetype");
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dayana";
+  background-color: white;
+  color: #323232;
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.38rem;
+}

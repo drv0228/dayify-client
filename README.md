@@ -22,11 +22,11 @@ Product Catalog in the Home-Page / Search Functionality: A robust search feature
 
 ### Tech Stack
 
-REACT, HTML, CSS, SASS, NODE, EXPRESS
+REACT, HTML, CSS, SASS, NODE, EXPRESS, KNEX.JS, MYSQL
 
 ### APIs
 
-I will use my own api.
+I will use my own api in the near future; for testing the app and Demo Day I found the following API: https://github.com/keikaavousi/fake-store-api to use for now. 
 
 ### Sitemap
 
@@ -68,17 +68,14 @@ My future plan includes building additional features and continuing to learn aft
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches: I will be providing this asap I have it ready.
+See them here: https://www.canva.com/design/DAF0W_8AOiM/w39q45LLdkAjRDwkDcZBJw/edit?utm_content=DAF0W_8AOiM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
-
-### Endpoints
-
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+My data in the future will be generated from our own database. The products inventory table will be responsible for generating products data, and we will be collecting and storing all our clients' contact details in the clients' table. For the DEMO DAY and the building process, I will obtain the products' data from the API. If time permits, I would like to implement User Registration and Profiles for Demo Day. In doing so, I will be using KNEX.JS and MySQL in my database."
 
 ### Auth
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+Does your project include any login or user profile functionality? 
+I would like to implement User Registration and Profiles for Demo Day if I have time. Authentication/authorization will be implemented using OAuth & Passport.js
 
