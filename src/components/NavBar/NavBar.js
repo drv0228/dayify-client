@@ -1,4 +1,6 @@
 import "./NavBar.scss";
+import React, { useState, useEffect } from 'react'; 
+
 import phone from "../../assets/images/store-number.svg";
 import logo from "../../assets/icons/dayify-logo.svg";
 import login from "../../assets/images/my-account.svg";
@@ -8,7 +10,9 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 
 import { Link } from "react-router-dom";
 
-function NavBar({ refresh, onSearch }) {
+function NavBar({ refresh, onSearch, openModal }) {
+
+ 
   return (
     <nav className="nav-bar">
       <div className="nav-bar__container1">
@@ -37,7 +41,7 @@ function NavBar({ refresh, onSearch }) {
             alt={`image with store's login access`}
           />
 
-          <Link to={`/my-shopping-cart`} className="link__products">
+          <Link to={`/`} className="link__products" onClick={openModal}>
             <img
               className="nav-bar__cart"
               src={cart}

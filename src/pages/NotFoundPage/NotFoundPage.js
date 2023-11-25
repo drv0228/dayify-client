@@ -2,7 +2,7 @@ function NotFoundPage() {
   return (
     <>
       <h1>404 error</h1>
-      <p>No video with that id exists!</p>
+      <p>Sorry! No product with that description exists in our store!</p>
     </>
   );
 }

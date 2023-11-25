@@ -2,9 +2,20 @@
 
 .cart__products {
     text-align: left;
+    color: $p-black;
+    font-size: medium;
     font-weight: 700;
     padding: 2rem 0rem 1rem 0rem;
     margin-left: 1rem;
-    color: $p-silver;
-    border-top: 1px solid $s-silver;
+    
+  }
+  .cart-items-container {
+    max-height: 90%; /* Set a max height for the scrollable container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-bottom: 1rem;
+
+  }
+  .products__amount {
+    color: black;
+    font-weight: 700;
   }

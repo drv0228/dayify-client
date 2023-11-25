@@ -30,14 +30,14 @@
   
 }
 .nav-bar__link {
-  // position: relative;
+  cursor: pointer;
   height: 5rem;
   background-color: $s-green;
 }
 .logo__image {
   background-color: $s-green;
   position: relative;
- 
+  cursor: pointer;
   @include bigdesktop {
     height: 5rem;
   }

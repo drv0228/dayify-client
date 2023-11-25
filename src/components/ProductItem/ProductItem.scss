@@ -15,8 +15,16 @@
     border: 0.8px solid $p-green;
   }
 }
+.product__image {
+  width: 9rem;
+  height: 12rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  background-color: $s-silver;
+}
 .link__products {
   display: flex;
+  cursor: pointer;
   text-decoration: none;
 }
 .product__details {
@@ -43,6 +51,7 @@
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
+  cursor: pointer;
   &:hover {
     background-color: $s-green;
   }

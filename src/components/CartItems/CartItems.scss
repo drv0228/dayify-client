@@ -3,32 +3,32 @@
 .product__list--cart{
   display: flex;
   align-items: center;
-  padding: 0.5rem;
+  padding: 2rem;
   box-sizing: border-box;
-    width: 15%;
+    width: 100%;
     background-color: white;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    padding-bottom: 2rem;
     &:hover {
-      border: 1px solid $p-green;
+      border: 0.8px solid $p-green;
     }
 }
 .link__products {
   display: flex;
+  cursor: pointer;
   text-decoration: none;
 }
 .product__image {
-  width: 7rem;
-  height: 4rem;
+  width: 9rem;
+  height: 12rem;
   margin-left: 0.5rem;
   border-radius: 4px;
   background-color: $s-silver;
 }
 .product__details {
   width: 70%;
-  text-align: left;
+  text-align: center;
   font-size: 0.8rem;
   padding-left: 0.65rem;
   padding-right: 1rem;
@@ -51,6 +51,7 @@
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   padding: .5rem 1rem;
+  cursor: pointer;
   &:hover {
     background-color: $s-green;
   }

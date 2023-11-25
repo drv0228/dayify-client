@@ -1,17 +1,19 @@
-import React from "react";
 import "./MyShoppingCart.scss";
 import CartItems from "../../components/CartItems/CartItems";
+import Modal from '../../components/Modal/Modal';
 
-
-const MyShoppingCart = ({cartItems, onRemoveFromCart, refresh }) => {
-
-
-  console.log(cartItems);
+const MyShoppingCart = ({cartItems, onRemoveFromCart, refresh, onClose, isModalOpen }) => {
+  const totalProducts = cartItems.length;
   return (
     <>
-      <p className="cart__products">Shopping Cart</p>
+    
+      {isModalOpen && (
+         <Modal onClose={onClose} refresh={refresh}>
+      <p className="cart__products">Products in Cart</p>
+      <p className="products__amount">{totalProducts}</p>
+      <div className="cart-items-container">
       <div className="products-list">
-        {cartItems.length > 0 ? (
+        {totalProducts > 0 ? (
           cartItems.map((item) => (
             <CartItems
               key={item.id}
@@ -23,10 +25,19 @@ const MyShoppingCart = ({cartItems, onRemoveFromCart, refresh }) => {
               refresh={refresh}
             />
           ))
+          
         ) : (
-          <p>Uff, your cart is empty!</p>
+        <h1>Uff, your cart is empty!</h1>
+    
         )}
+        </div>
+       
       </div>
+      
+      </Modal>
+      
+      )}
+      
     </>
   );
 };

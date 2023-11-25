@@ -19,7 +19,7 @@ function CartItems({
           />
         </Link>
         <div className="product__details">
-          <p className="product__title">{title}</p>
+        <Link to={`/product/${product.id}`} className="link__products"><p className="product__title">{title}</p></Link>
           <p className="product__price">${price}</p>
           <button
             onClick={() => onRemoveFromCart(product)}
