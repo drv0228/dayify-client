@@ -1,0 +1,46 @@
+@use "../../styles/partials/_variables" as *;
+@use "../../styles/partials/_mixins" as *;
+
+.nav-bar__search {
+  display: flex;
+  margin: 0rem 1rem;
+  background-color: $s-green;
+  border-radius: 35px;
+
+  @include tablet {
+    width: auto;
+  }
+  @include bigdesktop {
+    @include dimensions(36rem, 3rem);
+  }
+}
+.nav-bar__input {
+  border: 1px solid $p-silver;
+  border-radius: 35px;
+  background-color: $s-white;
+  padding: 0.3rem 2.5rem;
+  text-indent: -22.5rem;
+  @include tablet {
+    width: auto;
+  }
+  @include bigdesktop {
+    @include dimensions(36rem, 3rem);
+  }
+  &:active {
+    border-color: $p-green;
+  }
+}
+.search__button {
+  border-radius: 35px;
+  border: 1px solid $p-white;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/search.svg");
+  background-position: right 1rem center;
+  position: absolute;
+  right: 23.5rem;
+  top: 5.2rem;
+  @include dimensions(3rem, 2.5rem);
+  &:hover {
+    background-color: $s-silver;
+  }
+}

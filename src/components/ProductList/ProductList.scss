@@ -1,0 +1,25 @@
+@use "../../styles/partials/__variables" as *;
+
+.allproducts__title {
+  color: #6270a3;
+  font-weight: 700;
+  font-size: x-large;
+  text-align: left;
+  margin: 0rem 2rem;
+}
+.allproducts__link {
+  text-decoration: none;
+}
+.allproducts__list {
+  text-align: left;
+  font-weight: 700;
+  padding: 2rem 0rem 1rem 0rem;
+  margin-left: 1rem;
+  color: $p-silver;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}

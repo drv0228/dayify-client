@@ -4,97 +4,64 @@
 .nav-bar {
   display: flex;
   flex-direction: column;
-  // padding: 1rem;
-  width: 99%;
-  border-bottom: .1px solid $p-pink;
-  // position: fixed;
-  @include tablet {
-    flex-direction: row;
-    justify-content: center;
-    // padding: 1rem;
-    // position: relative;
-  }
-}
-.nav-bar__container {
-  background-color:forestgreen;
-  padding: 2rem;
+  height: 7rem;
   width: 100%;
-}
-// .logo__container {
-//   display: flex;
-//   margin-left: 1rem;
-//   // width: 75%;
-//   // @include flex-box(flex, row, center, center);
-//   // text-decoration: none;
-//   // padding: 1rem;
-// }
-// .logo__text {
-//   font-family: Dayify;
-//   @include letters-fonts(10, 700, $p-pink);
-//   margin-right: .5rem;
-//   align-self: center;
-// }
-.logo__image {
-  background-image: url("../../assets/icons/logo.png");
-  background-size: cover;
-  // background-color: $p-silver;
-  border-radius: 50%;
-  position: relative;
-  left: 1rem;
-  @include desktop {
-    @include dimensions(7vw, 8vw);
-  }
-  // background-color: $s-white;
-    // margin: 0 auto;
-  // padding-bottom: 1rem;
-  // @include tablet {
-  //   align-items: left;
-  //   margin: 0rem 0rem;
-  // }
-}
-// .nav-bar__search {
-//   display: flex;
-//   justify-content: space-around;
-//   width: 99%;
-//   margin-top: 1rem;
-//   // margin: 1.5rem 0rem;
-// }
-.nav-bar__input {
-  width: 19rem;
-  height: 2.25rem;
-  border: 1px solid $p-pink;
-  border-radius: 4px;
-  background-color: $s-white;
-  background-image: url("../../assets/icons/search.svg");
-  background-repeat: no-repeat;
-  background-position: left 1rem center;
-  padding: 0.3rem 2.5rem;
-  &:active {
-    border-color: $s-blue;
+  @include bigdesktop {
+    height: 15rem;
   }
 }
-// .nav-bar__cart {
-// //   background-image: url("../../assets/images/Mohan-muruge.jpg");
-//   background-size: cover;
-//   background-color: $p-silver;
-//   border-radius: 50%;
-// //   width: 2.5rem;
-// //   height: 2.5rem;
-
-//   @include tablet {
-//     // position: absolute;
-//     // right: 1rem;
-//   }
-// }
+.nav-bar__container1 {
+  background-color: $p-green;
+  display: flex;
+  padding: 0.5rem 0rem;
+}
 .nav-bar__image {
-  background-image: url("../../assets/icons/my-cart.png");
-  background-size: cover;
-  // background-color: $p-silver;
-  // border-radius: 98%;
-  position: relative;
-  right: 1.5rem;
-  @include desktop {
-    @include dimensions(7vw, 8vw);
-  }
+  background-color: $p-green;
+  height: 100%;
+  padding: .5rem 1rem;
+}
+.nav-bar__container2 {
+  background-color: $s-green;
+  padding: 1rem 3rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   
 }
+.nav-bar__link {
+  // position: relative;
+  height: 5rem;
+  background-color: $s-green;
+}
+.logo__image {
+  background-color: $s-green;
+  position: relative;
+ 
+  @include bigdesktop {
+    height: 5rem;
+  }
+}
+.nav-bar__container3{
+  background-color: $s-green;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-bar__login {
+    background-color: $s-green;
+    padding: 1rem;
+    @include bigdesktop {
+      height: 4rem;
+    }
+}
+
+.nav-bar__cart {
+  background-color: $s-green;
+  padding: 0.5rem;
+  @include bigdesktop {
+    height: 4rem;
+  }
+}
+
+

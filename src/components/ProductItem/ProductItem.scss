@@ -1,0 +1,49 @@
+@use "../../styles/partials/__variables" as *;
+
+.product__list {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 15%;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 2rem;
+  &:hover {
+    border: 0.8px solid $p-green;
+  }
+}
+.link__products {
+  display: flex;
+  text-decoration: none;
+}
+.product__details {
+  width: 70%;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: auto;
+}
+.product__title {
+  font-weight: 700;
+  margin: 0;
+}
+.product__price {
+  margin: 0;
+  color: forestgreen;
+  font-weight: 700;
+}
+.product__button {
+  margin: 0.5rem;
+  background-color: $p-green;
+  font-weight: 700;
+  margin: 1rem;
+  border: 1px solid $s-silver;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  &:hover {
+    background-color: $s-green;
+  }
+}

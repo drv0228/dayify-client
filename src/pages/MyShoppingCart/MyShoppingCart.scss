@@ -1,0 +1,10 @@
+@use "../../styles/partials/__variables" as *;
+
+.cart__products {
+    text-align: left;
+    font-weight: 700;
+    padding: 2rem 0rem 1rem 0rem;
+    margin-left: 1rem;
+    color: $p-silver;
+    border-top: 1px solid $s-silver;
+  }

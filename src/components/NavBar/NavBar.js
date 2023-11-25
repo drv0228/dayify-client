@@ -1,32 +1,51 @@
 import "./NavBar.scss";
-import logo from "../../assets/icons/logo.png";
-import MyShoppingCart from "../../assets/icons/my-cart.png";
+import phone from "../../assets/images/store-number.svg";
+import logo from "../../assets/icons/dayify-logo.svg";
+import login from "../../assets/images/my-account.svg";
+import cart from "../../assets/images/cart.svg";
 
-import MyCartPage from "../../pages/MyShoppingCart/MyShoppingCart";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ refresh, onSearch }) {
   return (
     <nav className="nav-bar">
-      {/* <div className="logo__container"> */}
-      {/* <p className="logo__text">dayify</p> */}
-      <div className="logo__image"></div>
-       {/* <img className="logo__image"
-          src={logo}
-          alt={`Logo that represent the company dayify`}
-        />  */}
-
-      <div className="nav-bar__container">
-      {/* <div className="nav-bar__search"> */}
-      <input className="nav-bar__input" placeholder="Search in the shop" />
-      {/* </div> */}
+      <div className="nav-bar__container1">
+        <img
+          className="nav-bar__image"
+          src={phone}
+          alt={`image with store's customer service phone number`}
+        />
       </div>
-      {/* <div className="nav-bar__cart"></div> */}
-      <div className="nav-bar__image"></div>
-        {/* <img src={MyShoppingCart}
-          alt={`image that represent the shopping cart to clients add products to buy in dayify`} className="nav-bar__image"/> */}
-      
+
+      <div className="nav-bar__container2">
+        <Link to="/" className="nav-bar__link">
+          <img
+            className="logo__image"
+            src={logo}
+            alt={`Logo that represent the company dayify`}
+          />{" "}
+        </Link>
+
+        <div className="nav-bar__container3">
+          <SearchBar onSearch={onSearch} />
+
+          <img
+            className="nav-bar__login"
+            src={login}
+            alt={`image with store's login access`}
+          />
+
+          <Link to={`/my-shopping-cart`} className="link__products">
+            <img
+              className="nav-bar__cart"
+              src={cart}
+              alt={`image with store's shopping cart products`}
+            />
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 }
