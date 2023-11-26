@@ -42,6 +42,23 @@
     height: 5rem;
   }
 }
+.categories__icon {
+  background-color: $s-green;
+  height: 1.3rem;
+}
+.nav-bar__list {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  text-align: left;
+}
+.list__item {
+  background-color: $s-green;
+  color: $s-black;
+  font-weight: 700;
+  padding-right: 10rem;
+  display: flex;
+}
 .nav-bar__container3{
   background-color: $s-green;
   display: flex;

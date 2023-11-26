@@ -10,6 +10,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import MyShoppingCart from "./pages/MyShoppingCart/MyShoppingCart";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import CategoryModal from "./components/CategoryModal/CategoryModal";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -17,9 +19,17 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isCategoriesOpen, setCategoriesOpen] = useState(false);
 
-  const productsPerPage = 10;
+  const productsPerPage = 6;
   const pagesVisited = pageNumber * productsPerPage;
+
+  const categories = [
+    "men's clothing",
+    "women's clothing",
+    "jewelery",
+    "electronics",
+  ];
 
   const url = "http://localhost:8086/products";
 
@@ -71,6 +81,9 @@ function App() {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
+  const openCategoryModal = () => setCategoriesOpen(true);
+  const closeCategoryModal = () => setCategoriesOpen(false);
+
   return (
     <section className="home-page">
       <BrowserRouter>
@@ -78,6 +91,7 @@ function App() {
           refresh={handleRefresh}
           onSearch={handleSearch}
           openModal={openModal}
+          openCategoryModal={openCategoryModal}
         />
         <Routes>
           <Route
@@ -94,7 +108,20 @@ function App() {
               />
             }
           />
-
+          <Route
+            path="/:category"
+            element={
+              <CategoryPage
+                products={searchResults.length > 0 ? searchResults : products}
+                onAddToCart={handleAddToCart}
+                refresh={handleRefresh}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                pagesVisited={pagesVisited}
+                productsPerPage={productsPerPage}
+              />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {/* Render MyShoppingCart conditionally */}
@@ -105,6 +132,14 @@ function App() {
             refresh={handleRefresh}
             onClose={closeModal}
             isModalOpen={isModalOpen}
+          />
+        )}
+        {isCategoriesOpen && (
+          <CategoryModal
+            products={products}
+            categories={categories}
+            closeCategories={closeCategoryModal}
+            isCategoriesOpen={isCategoriesOpen}
           />
         )}
         {/* <Footer /> */}
