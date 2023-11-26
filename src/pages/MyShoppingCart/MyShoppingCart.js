@@ -1,4 +1,5 @@
 import "./MyShoppingCart.scss";
+import PayIcon from "../../assets/icons/pay.svg";
 import CartItems from "../../components/CartItems/CartItems";
 import Modal from '../../components/Modal/Modal';
 
@@ -45,6 +46,11 @@ const MyShoppingCart = ({cartItems, onRemoveFromCart, refresh, onClose, isModalO
       
       <p className="products__amount">Subtotal  ({totalProducts}  Products)</p>
       <h2 className="products__total">${totalAmount}</h2>
+      <button className="pay__button">
+      <img className="icon__button"
+          src={PayIcon}
+          alt=""
+        />Pay</button>
       </Modal>
       
       )}

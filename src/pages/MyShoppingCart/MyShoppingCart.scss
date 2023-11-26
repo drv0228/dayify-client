@@ -23,3 +23,20 @@
     color: $error-color;
     font-weight: 700;
   }
+  .pay__button {
+    background-color: $s-yellow;
+    border: .5px solid $s-yellow;
+    color: $p-black;
+    border-radius: 9px;
+    width: 8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+  }
+  .icon__button {
+    background-color: $s-yellow;
+  }
