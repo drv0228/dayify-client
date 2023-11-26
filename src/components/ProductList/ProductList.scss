@@ -24,3 +24,31 @@
   justify-content: space-evenly;
   margin: 0 auto;
 }
+.paginationBttns {
+  width: 80%;
+  height: 2.5rem;
+  
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.paginationBttns a {
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid $p-green;
+  color: $p-green;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    background-color: $p-green;
+    color: $p-white;
+    font-weight: 700;
+  }
+}
+.paginationActive a {
+  background-color: $p-green;
+  color: $p-white;
+  font-weight: 700;
+}
+        

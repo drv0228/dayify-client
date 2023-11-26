@@ -3,8 +3,9 @@ import "./App.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
+import ReactPaginate from "react-paginate";
 
+import NavBar from "./components/NavBar/NavBar";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import MyShoppingCart from "./pages/MyShoppingCart/MyShoppingCart";
@@ -12,9 +13,13 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
+
+  const productsPerPage = 10;
+  const pagesVisited = pageNumber * productsPerPage;
 
   const url = "http://localhost:8086/products";
 
@@ -82,22 +87,14 @@ function App() {
                 products={searchResults.length > 0 ? searchResults : products}
                 onAddToCart={handleAddToCart}
                 refresh={handleRefresh}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                pagesVisited={pagesVisited}
+                productsPerPage={productsPerPage}
               />
             }
           />
-          {/* <Route path="product/:idFromParams" element={<ProductPage />} /> */}
-          {/* <Route
-            path="/my-shopping-cart"
-            element={
-              <MyShoppingCart
-                cartItems={cartItems}
-                onRemoveFromCart={handleRemoveFromCart}
-                refresh={handleRefresh}
-                onClose={closeModal}
-                isModalOpen={isModalOpen}
-              />
-            }
-          /> */}
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {/* Render MyShoppingCart conditionally */}
