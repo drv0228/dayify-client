@@ -1,9 +1,7 @@
 import "./ProductItem.scss";
 import { Link } from "react-router-dom";
 
-function ProductItem({ product, onAddToCart, image, title, price }) {
-
-  
+function ProductItem({ product, onAddToCart, image, title, price, refresh }) {
   return (
     <>
       <div className="product__list">

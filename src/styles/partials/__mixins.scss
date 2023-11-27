@@ -7,6 +7,12 @@
   }
 }
 
+@mixin laptop {
+  @media (min-width: $laptop-breakpoint) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: $desktop-breakpoint) {
     @content;
@@ -15,6 +21,12 @@
 
 @mixin bigdesktop {
     @media (min-width: $bigdesktop-breakpoint) {
+      @content;
+    }
+  }
+
+@mixin biggestdesktop {
+    @media (min-width: $biggestdesktop-breakpoint) {
       @content;
     }
   }

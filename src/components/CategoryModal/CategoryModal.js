@@ -5,7 +5,6 @@ import { NavLink, Link } from "react-router-dom";
 import arrow from "../../assets/icons/arrow.svg";
 
 const CategoryModal = ({ products, categories, closeCategories }) => {
-
   return (
     <div className="categories-overlay">
       <div className="categories__modal">
@@ -17,7 +16,12 @@ const CategoryModal = ({ products, categories, closeCategories }) => {
         <p className="categories">Categories</p>
 
         {categories.map((category) => (
-          <NavLink key={category} to={"/" + category} className="categories__link" onClick={closeCategories}>
+          <NavLink
+            key={category}
+            to={"/" + category}
+            className="categories__link"
+            onClick={closeCategories}
+          >
             {category}
             <img className="categories__icon--modal" src={arrow} alt="" />
           </NavLink>

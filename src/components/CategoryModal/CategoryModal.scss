@@ -2,58 +2,91 @@
 @use "../../styles/partials/_mixins" as *;
 
 .categories-overlay {
-    position: fixed;
-    bottom: 0rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: left;
-   
-  }
-  
-  .categories__modal {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    padding: 1rem;
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .close-button--categories {
-    position: absolute;
-    top: -1rem;
-    left: 19rem;
-    padding: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: $p-black;
-  }
+  position: fixed;
+  bottom: 0rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: left;
+}
 
-  .modal__link {
-    text-decoration: none;
-    background-color: none;
-    font-weight: 700;
+.categories__modal {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  @include tablet {
+    max-width: 200px;
   }
-  .categories {
-    font-family: 'dayify';
-    margin-top: 2rem;
-    font-size: x-large;
+  @include laptop {
+    max-width: 270px;
   }
-  .categories__link {
-    font-family: 'dayify';
-    font-size: medium;
-    text-decoration: none;
-    margin-top: 3rem;
-    &:hover {
-      color: $p-green;
-    }
+  @include bigdesktop {
+    max-width: 320px;
   }
-  .categories__icon--modal {
-    height: 1rem;
+  @include bigdesktop {
+    max-width: 520px;
   }
+}
+
+.close-button--categories {
+  position: absolute;
+  top: -1rem;
+  left: 12rem;
+  padding: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $p-black;
+  @include tablet {
+    left: 12rem;
+  }
+  @include laptop {
+    left: 17rem;
+  }
+  @include bigdesktop {
+    left: 21rem;
+  }
+  @include bigdesktop {
+    left: 36rem;
+  }
+}
+
+.modal__link {
+  text-decoration: none;
+  background-color: none;
+  font-weight: 700;
+  @include bigdesktop {
+    font-size: large;
+  }
+}
+.categories {
+  font-family: "dayify";
+  margin-top: 2rem;
+  font-size: x-large;
+  @include biggestdesktop {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+.categories__link {
+  font-family: "dayify";
+  font-size: medium;
+  text-decoration: none;
+  margin-top: 3rem;
+  &:hover {
+    color: $p-green;
+  }
+  @include biggestdesktop {
+    font-size: 2rem;
+  }
+}
+.categories__icon--modal {
+  height: 1rem;
+}

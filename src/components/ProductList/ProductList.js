@@ -11,7 +11,7 @@ const ProductList = ({
   pagesVisited,
   productsPerPage,
   pageNumber,
-  setPageNumber
+  setPageNumber,
 }) => {
   const displayProducts = products
     .slice(pagesVisited, pagesVisited + productsPerPage)
@@ -22,35 +22,34 @@ const ProductList = ({
         image={product.image}
         title={product.title}
         price={product.price}
+        refresh={refresh}
         onAddToCart={onAddToCart}
       />
     ));
 
-    const pageCount = Math.ceil(products.length / productsPerPage);
+  const pageCount = Math.ceil(products.length / productsPerPage);
 
-    const changePage = ({selected}) => {
-      setPageNumber(selected);
-    };
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <>
-      <Link to="/" onClick={refresh} className="allproducts__link">
+      <Link to="/" className="allproducts__link" onClick={refresh}>
         <p className="allproducts__title">ALL PRODUCTS</p>
       </Link>
-      <div className="allproducts__list">
-        {displayProducts}
-        </div>
-        <ReactPaginate 
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
-        />
+      <div className="allproducts__list">{displayProducts}</div>
+      <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      />
     </>
   );
 };

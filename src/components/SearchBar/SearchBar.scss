@@ -3,28 +3,47 @@
 
 .nav-bar__search {
   display: flex;
-  margin: 0rem 1rem;
   background-color: $s-green;
   border-radius: 35px;
-
   @include tablet {
-    width: auto;
+    margin: 0rem 1rem;
+  }
+  @include desktop {
+    padding-right: 0.5rem;
   }
   @include bigdesktop {
     @include dimensions(36rem, 3rem);
+  }
+  @include biggestdesktop {
+    align-items: center;
+    @include dimensions(46rem, 4rem);
   }
 }
 .nav-bar__input {
   border: 1px solid $p-silver;
   border-radius: 35px;
   background-color: $s-white;
-  padding: 0.3rem 2.5rem;
-  text-indent: -22.5rem;
+  font-size: 0.7rem;
+  text-indent: -2.5rem;
+  @include dimensions(10rem, 2.7rem);
   @include tablet {
     width: auto;
+    font-size: 1rem;
+    text-indent: -9rem;
+    @include dimensions(20rem, 2.5rem);
+  }
+  @include desktop {
+    text-indent: -12rem;
+    @include dimensions(26rem, 2.5rem);
   }
   @include bigdesktop {
+    text-indent: -21rem;
     @include dimensions(36rem, 3rem);
+  }
+  @include biggestdesktop {
+    font-size: 1.5rem;
+    text-indent: -28rem;
+    @include dimensions(46rem, 4rem);
   }
   &:active {
     border-color: $p-green;
@@ -35,13 +54,40 @@
   border: 1px solid $p-white;
   background-repeat: no-repeat;
   background-image: url("../../assets/icons/search.svg");
-  background-position: right 1rem center;
+
   position: absolute;
-  right: 23.5rem;
-  top: 5.2rem;
   cursor: pointer;
-  @include dimensions(3rem, 2.5rem);
+  @include dimensions(1.5rem, 2rem);
+  background-position: center 1rem right;
+  right: 14.6rem;
+  top: 12rem;
   &:hover {
     background-color: $s-silver;
+  }
+  @include tablet {
+    @include dimensions(2.6rem, 2rem);
+    background-position: right 1rem center;
+    right: 15rem;
+    top: 3.9rem;
+  }
+  @include laptop {
+    right: 16rem;
+    top: 4rem;
+  }
+  @include desktop {
+    @include dimensions(2.6rem, 2rem);
+    right: 20rem;
+    top: 4.5rem;
+  }
+  @include bigdesktop {
+    @include dimensions(3rem, 2.5rem);
+    right: 20.5rem;
+    top: 4.6rem;
+  }
+  @include biggestdesktop {
+    @include dimensions(4rem, 2.5rem);
+    background-position: right 2rem center;
+    right: 34rem;
+    top: 7.1rem;
   }
 }

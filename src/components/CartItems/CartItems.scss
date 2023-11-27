@@ -1,18 +1,18 @@
 @use "../../styles/partials/__variables" as *;
 
-.product__list--cart{
+.product__list--cart {
   display: flex;
   align-items: center;
   padding: 2rem;
   box-sizing: border-box;
-    width: 100%;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    &:hover {
-      border: 0.8px solid $p-green;
-    }
+  width: 100%;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  &:hover {
+    border: 0.8px solid $p-green;
+  }
 }
 .link__products {
   display: flex;
@@ -50,7 +50,7 @@
   border: 1px solid $s-silver;
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   &:hover {
     background-color: $s-green;

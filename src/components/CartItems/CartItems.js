@@ -1,13 +1,7 @@
 import "./CartItems.scss";
 import { Link } from "react-router-dom";
 
-function CartItems({
-  onRemoveFromCart,
-  product,
-  image,
-  title,
-  price
-}) {
+function CartItems({ onRemoveFromCart, product, image, title, price }) {
   return (
     <>
       <div className="product__list--cart">
@@ -19,7 +13,9 @@ function CartItems({
           />
         </Link>
         <div className="product__details">
-        <Link to={`/product/${product.id}`} className="link__products"><p className="product__title">{title}</p></Link>
+          <Link to={`/product/${product.id}`} className="link__products">
+            <p className="product__title">{title}</p>
+          </Link>
           <p className="product__price">${price}</p>
           <button
             onClick={() => onRemoveFromCart(product)}

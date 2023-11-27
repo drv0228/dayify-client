@@ -21,7 +21,6 @@ function NavBar({ refresh, onSearch, openModal, openCategoryModal }) {
           alt={`image with store's customer service phone number`}
         />
       </div>
-
       <div className="nav-bar__container2">
         <Link to="/" className="nav-bar__link">
           <img
@@ -32,26 +31,21 @@ function NavBar({ refresh, onSearch, openModal, openCategoryModal }) {
         </Link>
         <ol className="nav-bar__list">
           <Link to={`/`} className="link__products" onClick={openCategoryModal}>
-            
-            <li className="list__item">Categories
-            <img
-            className="categories__icon"
-            src={arrow}
-            alt=""
-          /></li>
+            <li className="list__item">
+              Categories
+              <img className="categories__icon" src={arrow} alt="" />
+            </li>
           </Link>
           <li className="list__item">Deals</li>
           <li className="list__item">What's New</li>
         </ol>
         <div className="nav-bar__container3">
           <SearchBar onSearch={onSearch} />
-
           <img
             className="nav-bar__login"
             src={login}
             alt={`image with store's login access`}
           />
-
           <Link to={`/`} className="link__products" onClick={openModal}>
             <img
               className="nav-bar__cart"

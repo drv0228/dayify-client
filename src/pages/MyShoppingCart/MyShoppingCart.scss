@@ -1,42 +1,77 @@
 @use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/_mixins" as *;
 
 .cart__products {
-    text-align: left;
-    color: $p-black;
-    font-size: medium;
-    font-weight: 700;
-    padding: 2rem 0rem 1rem 0rem;
-    margin-left: 1rem;
-    
-  }
-  .cart-items-container {
-    max-height: 90%; /* Set a max height for the scrollable container */
-    overflow-y: auto; /* Enable vertical scrolling */
+  text-align: left;
+  color: $p-black;
+  font-size: medium;
+  font-weight: 700;
+  padding: 2rem 0rem 1rem 0rem;
+  margin-left: 1rem;
+  @include biggestdesktop {
+    font-size: x-large;
     margin-bottom: 1rem;
-
   }
-  .products__amount {
-    color: black;
-    font-weight: 700;
+}
+.cart-items-container {
+  max-height: 90%; /* Set a max height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 1rem;
+}
+.shopping-cart__empty {
+  @include biggestdesktop {
+    font-size: large;
   }
-  .products__total {
-    color: $error-color;
-    font-weight: 700;
+}
+.products__amount {
+  color: black;
+  font-weight: 700;
+  @include biggestdesktop {
+    font-size: large;
   }
-  .pay__button {
-    background-color: $s-yellow;
-    border: .5px solid $s-yellow;
-    color: $p-black;
-    border-radius: 9px;
-    width: 8rem;
+}
+.products__total {
+  color: $error-color;
+  font-weight: 700;
+  @include biggestdesktop {
+    margin-top: 1rem;
+    font-size: large;
+  }
+}
+.pay__button {
+  background-color: $s-yellow;
+  border: 0.5px solid $s-yellow;
+  color: $p-black;
+  border-radius: 9px;
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 1.3rem;
+  right: 4rem;
+  @include tablet {
+    width: 6rem;
     height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 4rem;
-    right: 4rem;
+    bottom: 1rem;
+    right: 1rem;
   }
-  .icon__button {
-    background-color: $s-yellow;
+  @include biggestdesktop {
+    width: 12rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: xx-large;
   }
+}
+.icon__button {
+  background-color: $s-yellow;
+  @include biggestdesktop {
+    height: 3rem;
+  }
+}

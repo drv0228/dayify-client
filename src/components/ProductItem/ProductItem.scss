@@ -1,18 +1,37 @@
 @use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/_mixins" as *;
 
 .product__list {
   display: flex;
   align-items: center;
-  padding: 4rem;
-  box-sizing: border-box;
-  width: 25%;
+  padding: 1rem 0rem;
+  width: 98%;
   background-color: white;
-  margin: 10px;
+  margin: 3px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   padding-bottom: 2rem;
   &:hover {
     border: 0.8px solid $p-green;
+  }
+  @include tablet {
+    margin: 10px;
+    padding: 1rem;
+    width: 45%;
+  }
+  @include desktop {
+    padding: 1rem 2rem;
+    width: 35%;
+  }
+  @include bigdesktop {
+    margin-top: 3rem;
+    width: 29%;
+  }
+  @include biggestdesktop {
+    width: 30%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
   }
 }
 .product__image {
@@ -20,7 +39,15 @@
   height: 12rem;
   margin-left: 0.5rem;
   border-radius: 4px;
-  background-color: $s-silver;
+  background-color: $p-white;
+  @include bigdesktop {
+    width: 60%;
+    margin-right: 0.5rem;
+  }
+  @include biggestdesktop {
+    margin: 2rem 0.5rem;
+    background-color: $p-white;
+  }
 }
 .link__products {
   display: flex;
@@ -29,18 +56,27 @@
 }
 .product__details {
   width: 70%;
-  text-align: center;
-  font-size: 0.8rem;
-  padding: auto;
+  @include biggestdesktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .product__title {
   font-weight: 700;
   margin: 0;
+  @include biggestdesktop {
+    font-size: 1.3rem;
+  }
 }
 .product__price {
   margin: 0;
   color: forestgreen;
   font-weight: 700;
+  @include biggestdesktop {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
 }
 .product__button {
   margin: 0.5rem;
@@ -54,5 +90,10 @@
   cursor: pointer;
   &:hover {
     background-color: $s-green;
+  }
+  @include biggestdesktop {
+    font-size: 1.6rem;
+    width: 12rem;
+    height: 4rem;
   }
 }

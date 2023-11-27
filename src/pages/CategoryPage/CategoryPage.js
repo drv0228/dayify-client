@@ -2,11 +2,21 @@ import "./CategoryPage.scss";
 import ProductList from "../../components/ProductList/ProductList";
 import { useParams } from "react-router-dom";
 
-const CategoryPage = ({ cartItems, products, onAddToCart, refresh, pagesVisited, productsPerPage, pageNumber,  setPageNumber }) => {
+const CategoryPage = ({
+  cartItems,
+  products,
+  onAddToCart,
+  refresh,
+  pagesVisited,
+  productsPerPage,
+  pageNumber,
+  setPageNumber,
+}) => {
+  const { category } = useParams();
 
-    const { category } = useParams();
-    
-    const displayCategoryProducts = products.filter((product) => product.category == category )
+  const displayCategoryProducts = products.filter(
+    (product) => product.category == category
+  );
 
   return (
     <main>

@@ -1,7 +1,16 @@
 import "./HomePage.scss";
 import ProductList from "../../components/ProductList/ProductList";
 
-const HomePage = ({ cartItems, products, onAddToCart, refresh, pagesVisited, productsPerPage, pageNumber,  setPageNumber }) => {
+const HomePage = ({
+  cartItems,
+  products,
+  onAddToCart,
+  refresh,
+  pagesVisited,
+  productsPerPage,
+  pageNumber,
+  setPageNumber,
+}) => {
   return (
     <main>
       {/* Display search results if available, otherwise, show all products */}
