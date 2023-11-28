@@ -1,11 +1,11 @@
 import "./ProductItem.scss";
 import { Link } from "react-router-dom";
 
-function ProductItem({ product, onAddToCart, image, title, price, refresh }) {
+function ProductItem({ product, onAddToCart, productId, image, title, price, refresh }) {
   return (
     <>
       <div className="product__list">
-        <Link to={`/product/${product.id}`} className="link__products">
+        <Link to={`/${productId}`} className="link__products">
           <img
             src={image}
             alt={`A product titled ${title} priced at ${price}`}
@@ -13,7 +13,7 @@ function ProductItem({ product, onAddToCart, image, title, price, refresh }) {
           />
         </Link>
         <div className="product__details">
-          <Link to={`/product/${product.id}`} className="link__products">
+          <Link to={`/${productId}`} className="link__products">
             <p className="product__title">{title}</p>
           </Link>
           <p className="product__price">${price}</p>

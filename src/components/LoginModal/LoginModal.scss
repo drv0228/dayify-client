@@ -1,0 +1,88 @@
+@use "../../styles/partials/_variables" as *;
+@use "../../styles/partials/_mixins" as *;
+
+.signin-overlay {
+  position: fixed;
+  bottom: 0rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: left;
+}
+
+.signin__modal {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem;
+  max-width: 200px;
+  height: 5vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  @include tablet {
+    max-width: 200px;
+  }
+  @include laptop {
+    max-width: 270px;
+  }
+  @include bigdesktop {
+    max-width: 320px;
+  }
+  @include bigdesktop {
+    max-width: 520px;
+  }
+}
+
+.input__field {
+    border: 1px solid $p-green;
+    border-radius: 35px;
+    background-color: $s-white;
+    font-size: 0.7rem;
+    text-indent: -2.5rem;
+    @include dimensions(10rem, 2.7rem);
+    @include tablet {
+      width: auto;
+      font-size: 1rem;
+      text-indent: -9rem;
+      @include dimensions(20rem, 2.5rem);
+    }
+    @include desktop {
+      text-indent: -12rem;
+      @include dimensions(26rem, 2.5rem);
+    }
+    @include bigdesktop {
+      text-indent: -21rem;
+      @include dimensions(36rem, 3rem);
+    }
+    @include biggestdesktop {
+      font-size: 1.5rem;
+      text-indent: -28rem;
+      @include dimensions(46rem, 4rem);
+    }
+    &:active {
+      border-color: $p-green;
+    }
+  }
+
+  .submit__button {
+    margin: 0.5rem;
+    background-color: $p-green;
+    color: $p-white;
+    font-weight: 700;
+    margin: 1rem;
+    border: 1px solid $s-silver;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    @include dimensions(10rem, 2.7rem);
+    &:hover {
+      background-color: $s-green;
+    }
+    @include biggestdesktop {
+      font-size: 1.6rem;
+      width: 12rem;
+      height: 4rem;
+    }
+  }

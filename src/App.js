@@ -122,6 +122,16 @@ function App() {
               />
             }
           />
+             <Route
+            path="/:productId"
+            element={
+              <ProductPage
+                products={searchResults.length > 0 ? searchResults : products}
+                onAddToCart={handleAddToCart}
+                refresh={handleRefresh}
+              />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {/* Render MyShoppingCart conditionally */}

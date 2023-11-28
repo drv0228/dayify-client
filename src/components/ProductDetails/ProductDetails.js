@@ -1,20 +1,20 @@
 import "./ProductDetails.scss";
 import likesIcon from "../../assets/icons/likes.svg";
 
-function ProductDetails({ product }) {
+function ProductDetails({ product, image, title, price, description }) {
   return (
     <>
       <section className="main">
         <img
           className="display__product"
-          src={product.image}
+          src={image}
           alt="Selected Product's Picture"
         />
         <div>
-          <h1 className="selectedVideo__title">{product.title}</h1>
+          <h1 className="selectedVideo__title">{title}</h1>
           <div className="video__details">
             <div className="video__detail">
-              <p className="video__description--channel">{product.price}</p>
+              <p className="video__description--channel">{price}</p>
             </div>
             <div>
               <div className="video__like">
@@ -27,7 +27,7 @@ function ProductDetails({ product }) {
               </div>
             </div>
           </div>
-          <p className="video__description">{product.description}</p>
+          <p className="video__description">{description}</p>
         </div>
       </section>
     </>

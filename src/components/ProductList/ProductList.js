@@ -17,7 +17,7 @@ const ProductList = ({
     .slice(pagesVisited, pagesVisited + productsPerPage)
     .map((product) => (
       <ProductItem
-        key={product.id}
+        productId={product.id}
         product={product}
         image={product.image}
         title={product.title}
