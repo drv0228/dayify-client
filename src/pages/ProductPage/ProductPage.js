@@ -7,33 +7,22 @@ function ProductPage({ products, refresh }) {
   console.log("All Products:", products);
   const { productId } = useParams();
 
-  // const findProduct = products.find((product) => {
-  //   return product.id === productId;
-  // });
   const findProduct = products.find((product) => product.id == productId);
-  console.log("hiiii: ", productId);
-
+  // console.log("this is the productId: ", productId);
+  // console.log("Found Product:", findProduct);
   if (!findProduct) {
     // Handle the case where the product is not found, e.g., redirect to a 404 page
     return <NotFoundPage />;
   }
-
-  // console.log("Product ID from params:", productId);
-  // console.log("Found Product:", findProduct);
 
   return (
     <main className="product-page">
       <Link to="/" className="allproducts__link" onClick={refresh}>
         <p className="allproducts__title">ALL PRODUCTS</p>
       </Link>
+
       <section className="section__product">
-        {/* <ProductDetails
-          product={findProduct}
-          title={findProduct.title}
-          price={findProduct.price}
-          image={findProduct.image}
-          description={findProduct.description}
-        /> */}
+       
         <img
           className="display__product--details"
           src={findProduct?.image}
@@ -41,20 +30,20 @@ function ProductPage({ products, refresh }) {
         />
         <div>
           <h1 className="selectedProduct__title">{findProduct?.title}</h1>
-          <div className="video__details">
-            <div className="video__detail">
+          <div className="product__details">
+            <div className="product__detail">
               <p className="selectedProduct__price">
                 ${findProduct?.price}
               </p>
             </div>
             <div>
-              {/* <div className="video__like">
+              {/* <div className="product__fav">
                 <img
-                  className="video__likes--icon"
-                  src={likesIcon}
-                  alt="Icon that represent the product's rating"
+                  className="product__fav--icon"
+                  src={favIcon}
+                  alt="Icon that represent that the customer love the product so will be added to the favorite list of the client or for later products list"
                 />
-                {/* <p className="video__likes">{selectedProduct.rating.rate}</p> */}
+                {/* <p className="product__rate">{selectedProduct.rating.rate}</p> */}
               {/* </div> */}
             </div>
           </div>
