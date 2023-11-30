@@ -1,11 +1,19 @@
 import "./ProductItem.scss";
 import { Link } from "react-router-dom";
 
-function ProductItem({ product, onAddToCart, productId, image, title, price, refresh }) {
+function ProductItem({
+  product,
+  onAddToCart,
+  productId,
+  image,
+  title,
+  price,
+  refresh,
+}) {
   return (
     <>
       <div className="product__list">
-        <Link to={`/${productId}`} className="link__products">
+        <Link to={`/product/${productId}`} className="link__products">
           <img
             src={image}
             alt={`A product titled ${title} priced at ${price}`}

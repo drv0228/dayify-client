@@ -10,7 +10,8 @@ function ProductPage({ products, refresh }) {
   // const findProduct = products.find((product) => {
   //   return product.id === productId;
   // });
-  const findProduct = products.find((product) => product.id === productId );
+  const findProduct = products.find((product) => product.id == productId);
+  console.log("hiiii: ", productId);
 
   if (!findProduct) {
     // Handle the case where the product is not found, e.g., redirect to a 404 page
@@ -25,7 +26,7 @@ function ProductPage({ products, refresh }) {
       <Link to="/" className="allproducts__link" onClick={refresh}>
         <p className="allproducts__title">ALL PRODUCTS</p>
       </Link>
-      <section className="page__section1">
+      <section className="section__product">
         {/* <ProductDetails
           product={findProduct}
           title={findProduct.title}
@@ -33,16 +34,18 @@ function ProductPage({ products, refresh }) {
           image={findProduct.image}
           description={findProduct.description}
         /> */}
-          <img
-          className="display__product"
-          src={findProduct.image}
+        <img
+          className="display__product--details"
+          src={findProduct?.image}
           alt="Selected Product's Picture"
         />
         <div>
-          <h1 className="selectedVideo__title">{findProduct.title}</h1>
+          <h1 className="selectedProduct__title">{findProduct?.title}</h1>
           <div className="video__details">
             <div className="video__detail">
-              <p className="video__description--channel">{findProduct.price}</p>
+              <p className="selectedProduct__price">
+                ${findProduct?.price}
+              </p>
             </div>
             <div>
               {/* <div className="video__like">
@@ -52,10 +55,10 @@ function ProductPage({ products, refresh }) {
                   alt="Icon that represent the product's rating"
                 />
                 {/* <p className="video__likes">{selectedProduct.rating.rate}</p> */}
-              {/* </div> */} 
+              {/* </div> */}
             </div>
           </div>
-          <p className="video__description">{findProduct.description}</p>
+          <p className="product__description">{findProduct?.description}</p>
         </div>
       </section>
     </main>

@@ -9,16 +9,17 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
 }
 
 .signin__modal {
-  display: flex;
-  flex-direction: column;
+
   background: #fff;
   padding: 1rem;
   max-width: 200px;
   height: 5vh;
+  // border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @include tablet {
     max-width: 200px;
@@ -32,12 +33,21 @@
   @include bigdesktop {
     max-width: 520px;
   }
+  &:active {
+    border: 5px solid $p-green;
+  }
 }
-
+.sigin__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
 .input__field {
     border: 1px solid $p-green;
     border-radius: 35px;
-    background-color: $s-white;
+    background-color: $s-green;
     font-size: 0.7rem;
     text-indent: -2.5rem;
     @include dimensions(10rem, 2.7rem);
@@ -84,5 +94,16 @@
       font-size: 1.6rem;
       width: 12rem;
       height: 4rem;
+    }
+  }
+
+  .sign-up__container {
+    display: flex;
+  }
+ .sign-up__call {
+    margin: 0.3rem;
+    font-weight: 700;
+    @include biggestdesktop {
+      font-size: large;
     }
   }

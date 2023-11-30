@@ -11,7 +11,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 
 import { Link } from "react-router-dom";
 
-function NavBar({ refresh, onSearch, openModal, openCategoryModal }) {
+function NavBar({ refresh, onSearch, openModal, openLoginModal, openCategoryModal }) {
   return (
     <nav className="nav-bar">
       <div className="nav-bar__container1">
@@ -41,11 +41,15 @@ function NavBar({ refresh, onSearch, openModal, openCategoryModal }) {
         </ol>
         <div className="nav-bar__container3">
           <SearchBar onSearch={onSearch} />
+
+          <Link to={`/`} className="link__products" onClick={openLoginModal}>
           <img
             className="nav-bar__login"
             src={login}
             alt={`image with store's login access`}
-          />
+          /></Link>
+
+
           <Link to={`/`} className="link__products" onClick={openModal}>
             <img
               className="nav-bar__cart"

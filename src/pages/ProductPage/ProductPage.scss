@@ -1,9 +1,47 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/_mixins" as *;
+
 .product-page {
     display: flex;
+    flex-direction: column;
+}
+.section__product {
+    @include laptop {
+        flex-direction: row;
+    }
 }
 .page__section1 {
     width: 50%;
 }
 .page__section2 {
     width: 50%;
+}
+.display__product--details {
+    width: 70vw;
+    margin: 4rem;
+    @include tablet {
+        width: 30vw;
+    }
+    @include biggestdesktop {
+        width: 15vw;
+    }
+}
+.selectedProduct__title {
+    font-weight: 700;
+    font-size: medium;
+}
+.selectedProduct__price {
+    font-weight: 700;
+    color: $p-green;
+}
+.product__description {
+ 
+ margin: 0rem 1rem;
+ @include tablet {
+    margin: 0rem 10rem; 
+ }
+ @include biggestdesktop {
+    font-size: large;
+    margin: 0rem 20rem;
+ }
 }

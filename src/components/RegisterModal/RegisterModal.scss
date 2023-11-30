@@ -1,7 +1,7 @@
 @use "../../styles/partials/_variables" as *;
 @use "../../styles/partials/_mixins" as *;
 
-.signin-overlay {
+.signup-overlay {
   position: fixed;
   bottom: 0rem;
   left: 0;
@@ -9,16 +9,16 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
 }
 
-.signin__modal {
-  display: flex;
-  flex-direction: column;
+.signup__modal {
+
   background: #fff;
   padding: 1rem;
   max-width: 200px;
-  height: 5vh;
+  height: 8vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @include tablet {
     max-width: 200px;
@@ -32,8 +32,17 @@
   @include bigdesktop {
     max-width: 520px;
   }
+  &:active {
+    border: 5px solid $p-green;
+  }
 }
-
+.signup__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}
 .input__field {
     border: 1px solid $p-green;
     border-radius: 35px;
@@ -84,5 +93,17 @@
       font-size: 1.6rem;
       width: 12rem;
       height: 4rem;
+    }
+  }
+
+  .sign-in__container {
+    display: flex;
+  }
+
+ .sign-in__call {
+    margin: 0.3rem;
+    font-weight: 700;
+    @include biggestdesktop {
+      font-size: large;
     }
   }

@@ -12,6 +12,8 @@ import MyShoppingCart from "./pages/MyShoppingCart/MyShoppingCart";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CategoryModal from "./components/CategoryModal/CategoryModal";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import LoginModal from "./components/LoginModal/LoginModal"
+import RegisterModal from "./components/RegisterModal/RegisterModal"
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -20,6 +22,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isCategoriesOpen, setCategoriesOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
+  const [isRegisterOpen, setRegisterOpen] = useState(false);
 
   const productsPerPage = 6;
   const pagesVisited = pageNumber * productsPerPage;
@@ -29,6 +33,8 @@ function App() {
     "women's clothing",
     "jewelery",
     "electronics",
+    "grocery",
+    "Health Personal Care",
   ];
 
   const url = "http://localhost:8086/products";
@@ -81,6 +87,12 @@ function App() {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
+  const openLoginModal = () => setLoginOpen(true);
+  const closeLoginModal = () => setLoginOpen(false);
+
+  const openRegisterModal = () => setRegisterOpen(true);
+  const closeRegisterModal = () => setRegisterOpen(false);
+
   const openCategoryModal = () => setCategoriesOpen(true);
   const closeCategoryModal = () => setCategoriesOpen(false);
 
@@ -92,6 +104,7 @@ function App() {
           onSearch={handleSearch}
           openModal={openModal}
           openCategoryModal={openCategoryModal}
+          openLoginModal={openLoginModal}
         />
         <Routes>
           <Route
@@ -123,7 +136,7 @@ function App() {
             }
           />
              <Route
-            path="/:productId"
+            path="/product/:productId"
             element={
               <ProductPage
                 products={searchResults.length > 0 ? searchResults : products}
@@ -150,6 +163,22 @@ function App() {
             categories={categories}
             closeCategories={closeCategoryModal}
             isCategoriesOpen={isCategoriesOpen}
+          />
+        )}
+          {isLoginOpen && (
+          <LoginModal
+            refresh={handleRefresh}
+            closeLoginModal={closeLoginModal}
+            isLoginOpen={isLoginOpen}
+            openRegisterModal={openRegisterModal}
+          />
+        )}
+          {isRegisterOpen && (
+          <RegisterModal
+            refresh={handleRefresh}
+            closeRegisterModal={closeRegisterModal}
+            openLoginModal={openLoginModal}
+            isRegisterOpen={isRegisterOpen}
           />
         )}
         {/* <Footer /> */}
