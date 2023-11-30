@@ -31,6 +31,7 @@ function App() {
   const categories = [
     "men's clothing",
     "women's clothing",
+    "shoes",
     "jewelery",
     "electronics",
     "grocery",
