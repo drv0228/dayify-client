@@ -12,8 +12,9 @@ import MyShoppingCart from "./pages/MyShoppingCart/MyShoppingCart";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CategoryModal from "./components/CategoryModal/CategoryModal";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
-import LoginModal from "./components/LoginModal/LoginModal"
-import RegisterModal from "./components/RegisterModal/RegisterModal"
+import LoginModal from "./components/LoginModal/LoginModal";
+import RegisterModal from "./components/RegisterModal/RegisterModal";
+import PaymentPage from "./pages/PaymentPage/PaymentPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,7 +38,7 @@ function App() {
     "Health Personal Care",
   ];
 
-  const url = "http://localhost:8086/products";
+  const url = process.env.REACT_APP_SERVER_URL + "/products";
 
   useEffect(() => {
     async function getProducts() {
@@ -57,7 +58,7 @@ function App() {
     try {
       // Make a request to the server with the search query
       const response = await axios.get(
-        `http://localhost:8086/search?q=${query}`
+        process.env.REACT_APP_SERVER_URL + `/search?q=${query}`
       );
       // const data = await response.json();
       // Update the searchResults state based on the search results
@@ -135,7 +136,7 @@ function App() {
               />
             }
           />
-             <Route
+          <Route
             path="/product/:productId"
             element={
               <ProductPage
@@ -143,6 +144,12 @@ function App() {
                 onAddToCart={handleAddToCart}
                 refresh={handleRefresh}
               />
+            }
+          />
+          <Route
+            path="/payment"
+            element={
+              <PaymentPage cartItems={cartItems} refresh={handleRefresh} />
             }
           />
           <Route path="*" element={<NotFoundPage />} />
@@ -165,7 +172,7 @@ function App() {
             isCategoriesOpen={isCategoriesOpen}
           />
         )}
-          {isLoginOpen && (
+        {isLoginOpen && (
           <LoginModal
             refresh={handleRefresh}
             closeLoginModal={closeLoginModal}
@@ -173,7 +180,7 @@ function App() {
             openRegisterModal={openRegisterModal}
           />
         )}
-          {isRegisterOpen && (
+        {isRegisterOpen && (
           <RegisterModal
             refresh={handleRefresh}
             closeRegisterModal={closeRegisterModal}

@@ -2,7 +2,7 @@ import "./MyShoppingCart.scss";
 import PayIcon from "../../assets/icons/pay.svg";
 import CartItems from "../../components/CartItems/CartItems";
 import Modal from "../../components/Modal/Modal";
-
+import { Link } from "react-router-dom";
 const MyShoppingCart = ({
   cartItems,
   onRemoveFromCart,
@@ -19,6 +19,10 @@ const MyShoppingCart = ({
     return sum;
   }
   const totalAmount = finalTotalAmount(cartItems);
+
+  const handlePayClick = () => {
+    onClose();
+  };
 
   return (
     <>
@@ -52,10 +56,9 @@ const MyShoppingCart = ({
             Subtotal ({totalProducts} Products)
           </p>
           <h2 className="products__total">${totalAmount}</h2>
-          <button className="pay__button">
-            <img className="icon__button" src={PayIcon} alt="" />
-            Pay
-          </button>
+          <Link to="/payment" className="pay__button" onClick={handlePayClick}>
+            <img className="icon__button" src={PayIcon} alt="" /> Pay
+          </Link>
         </Modal>
       )}
     </>
