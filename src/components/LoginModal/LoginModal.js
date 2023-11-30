@@ -5,7 +5,7 @@ import { auth, app, provider } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
-const LoginModal = ({ openRegisterModal }) => {
+const LoginModal = ({ closeLoginModal, openRegisterModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [value, setValue] = useState("");
@@ -25,32 +25,38 @@ const LoginModal = ({ openRegisterModal }) => {
       window.location.reload();
   }
  
-  const logout = async () => {
-      try {
-        await signOut(auth);
-      } catch (err) {
-        console.error(err);
-      }
-      window.location.reload();
-  };
-  const googleSignIn = () => {
-    signInWithPopup(auth, provider).then((data)=>{
-      setValue(data.user.email)
-      localStorage.setItem("email", data.user.email)
-      
-    })
-    
-  }
+  // const logout = async () => {
+  //     try {
+  //       await signOut(auth);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+     
+  // };
 
-  useEffect(() => {
-    setValue(localStorage.getItem('email'))
-  })
+  // const googleSignIn = () => {
+  //   signInWithPopup(auth, provider).then((data)=>{
+  //     setValue(data.user.email)
+  //     localStorage.setItem("email", data.user.email)
+      
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   setValue(localStorage.getItem('email'))
+  // })
 
 
   return (
     <>
       <div className="signin-overlay">
         <div className="signin_modal">
+        <button className="close-button" onClick={closeLoginModal}>
+          <Link to="/" className="modal__link--login">
+            {" "}
+            X{" "}
+          </Link>
+        </button>
           <div className="sigin__container">
             <div className="signin__heading">
               <h1 className="sign-up__call">Sign In</h1>
@@ -87,26 +93,27 @@ const LoginModal = ({ openRegisterModal }) => {
               </button>
             </form>
 
-            <button
+            {/* <button
                 onClick={logout}
                 className="submit__button"
                 value="Log Out"
               >
                 Log Out
-              </button>
-            <button
+              </button> */}
+            {/* <button
                 onClick={googleSignIn}
-                className="submit__button"
-                value="Sign In"
+                className="submit__button google"
+                value="Sign In" onChange={closeLoginModal}
               >
                 Sign In with Google
-              </button>
+              </button> */}
             <div className="sign-up__container">
               <p className="sign-up__call">New User ?</p>
               <Link
                 to={`/`}
                 className="link__products"
                 onClick={openRegisterModal}
+                onChange={closeLoginModal}
               >
                 <p className="sign-up__call"> Create an account </p>
               </Link>

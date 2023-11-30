@@ -5,7 +5,7 @@ import { auth, app, provider } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
-const RegisterModal = () => {
+const RegisterModal = (closeRegisterModal) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const navigate = useNavigate('');
@@ -31,18 +31,24 @@ const RegisterModal = () => {
   // })
   }
 
-  const signInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const signInWithGoogle = async () => {
+  //   try {
+  //     await signInWithPopup(auth, provider);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   
   return (
     <>
       <div className="signup-overlay">
         <div className="signup_modal">
+        <button className="close-button" onClick={closeRegisterModal}>
+          <Link to="/" className="modal__link--register">
+            {" "}
+            X{" "}
+          </Link>
+        </button>
           <div className="signup__container ">
             <div className="signup__heading">
               <h1 className="sign-in__call">Register</h1>
@@ -74,17 +80,19 @@ const RegisterModal = () => {
                 name="submit"
                 className="submit__button"
                 value="Sign up"
+                onChange={closeRegisterModal}
               >
                 Submit
               </button>
             </form>
-            <button
+            {/* <button
               onClick={signInWithGoogle}
               className="submit__button"
               value="Sign Up"
+              onChange={closeRegisterModal}
             >
               Register with Google
-            </button>
+            </button> */}
             {/* <div className="sign-in__container">
               <p className="sign-in__call">Already a user ?</p>
               <Link

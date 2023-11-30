@@ -47,7 +47,7 @@
 .input__field {
     border: 1px solid $p-green;
     border-radius: 35px;
-    background-color: $s-green;
+    background-color: $s-white;
     font-size: 0.7rem;
     text-indent: -2.5rem;
     @include dimensions(10rem, 2.7rem);
@@ -76,15 +76,15 @@
   }
 
   .submit__button {
-    margin: 0.5rem;
+    margin: 0.2rem;
     background-color: $p-green;
     color: $p-white;
     font-weight: 700;
-    margin: 1rem;
+    // margin: 1rem;
     border: 1px solid $s-silver;
     border-radius: 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 3rem;
     cursor: pointer;
     @include dimensions(10rem, 2.7rem);
     &:hover {
@@ -95,8 +95,8 @@
       width: 12rem;
       height: 4rem;
     }
+   
   }
-
   .sign-up__container {
     display: flex;
   }
@@ -104,6 +104,16 @@
     margin: 0.3rem;
     font-weight: 700;
     @include biggestdesktop {
+      font-size: large;
+    }
+  }
+  .modal__link--login {
+    text-decoration: none;
+    background-color: none;
+    font-weight: 700;
+    border-radius: 20%;
+    padding: .2rem;
+    @include bigdesktop {
       font-size: large;
     }
   }
