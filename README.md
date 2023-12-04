@@ -16,17 +16,29 @@ The app will be designed for individuals in the USA who wish to send gifts, food
 
 ### Features
 
-Product Catalog in the Home-Page / Search Functionality: A robust search feature to help users find products quickly. / Shopping Cart: To Add and remove items. 
+Product Catalog in the Home-Page / Search Functionality: A robust search feature to help users find products quickly. / Shopping Cart: To Add and remove items. /
+User Registration: User account creation and authentication; Login In and Register. 
 
-## Implementation
+## Instruccions 
+
+To see the app in your local machine you need to git clone the repositories dayify-client and dayify-server; do not forget to make npm i in both before run them.
+Also, you can see the port on use is 8086 and you can change it at the file .env
 
 ### Tech Stack
 
-REACT, HTML, CSS, SASS, NODE, EXPRESS, KNEX.JS, MYSQL
+REACT, HTML, CSS, SASS, NODE, & EXPRESS.
+
+### Data
+
+My data in the future will be generated from our own database. The products inventory table will be responsible for generating products data, and we will be collecting and storing all our clients' contact details in the clients' table. For the DEMO DAY and the building process, I will obtain the products' data from the my own API using my repo "dayify-server" that I created with node and express . 
+
+### Auth
+
+Authentication/authorization was implemente using Firebase.
 
 ### APIs
 
-I will use my own api in the near future; for testing the app and Demo Day I found the following API: https://github.com/keikaavousi/fake-store-api to use for now. 
+I am using my own api.
 
 ### Sitemap
 
@@ -66,16 +78,5 @@ My future plan includes building additional features and continuing to learn aft
 - Returns and Refunds: Clear policies and processes for handling returns and refunds.
 - Security Features: SSL encryption to secure transactions and protect user data.
 
-### Mockups
 
-See them here: https://www.canva.com/design/DAF0W_8AOiM/w39q45LLdkAjRDwkDcZBJw/edit?utm_content=DAF0W_8AOiM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
-### Data
-
-My data in the future will be generated from our own database. The products inventory table will be responsible for generating products data, and we will be collecting and storing all our clients' contact details in the clients' table. For the DEMO DAY and the building process, I will obtain the products' data from the API. If time permits, I would like to implement User Registration and Profiles for Demo Day. In doing so, I will be using KNEX.JS and MySQL in my database."
-
-### Auth
-
-Does your project include any login or user profile functionality? 
-I would like to implement User Registration and Profiles for Demo Day if I have time. Authentication/authorization will be implemented using OAuth & Passport.js
 
