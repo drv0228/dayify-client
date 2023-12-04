@@ -48,20 +48,15 @@ function App() {
         console.log(products);
       } catch (error) {
         console.error("axios call failed", error);
-      }
-    }
-
+      }}
     getProducts();
   }, []);
 
   const handleSearch = async (query) => {
     try {
-      // Make a request to the server with the search query
       const response = await axios.get(
         `http://localhost:8086/search?q=${query}`
       );
-      // const data = await response.json();
-      // Update the searchResults state based on the search results
       setSearchResults(response.data);
     } catch (error) {
       console.error("Error searching for products:", error);
@@ -69,13 +64,11 @@ function App() {
   };
 
   const handleAddToCart = (product) => {
-    // Add the selected product to the cart
     setCartItems([...cartItems, product]);
     console.log(cartItems);
   };
 
   const handleRemoveFromCart = (product) => {
-    // Remove the selected product from the cart
     const updatedCart = cartItems.filter((item) => item.id !== product.id);
     setCartItems(updatedCart);
     console.log(cartItems);
